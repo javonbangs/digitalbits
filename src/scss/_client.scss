@@ -1,0 +1,44 @@
+//#hero #hero-svg-1 {
+   // filter: saturate(50%)
+//}
+
+
+
+#about .container #about-art #about-list #scrollable-wrap ul > * {
+    @include flex-child(0 1 100px)
+}
+
+#about .container #about-art #scrollable-wrap ul li.blocktower svg {
+    background: #303034!important
+}
+#about .container #about-art #scrollable-wrap ul li.blocktower svg {
+    [style*='fill:#181e27'], [style*='fill:#151b24'], [style*='fill:#181e27'], [style*='fill:#161b25'] {
+        fill: #303034!important
+    }
+} 
+
+#ecosystem .container #ecosystem-list li .ecosystem-item {
+    filter: saturate(50%)
+}
+
+footer #footer-svg-wrap svg {
+    filter: saturate(60%)
+}
+
+@media (min-width: 768px) {
+    #desc {
+        background: initial;
+        &:before {
+            @include pseudo();
+            filter: saturate(50%);
+            background-image: url(/static/bear.svg);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 2080px;
+        }
+    } 
+}
+
+#desc #desc-svg-wrap svg {
+    filter: saturate(50%);
+}

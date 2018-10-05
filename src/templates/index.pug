@@ -1,0 +1,301 @@
+extends partials/_layout
+append head
+    +header({
+        "type": "home",
+        "title": "Solace Custom Saunas", 
+        "metadescription": "Sauna your way to a longer life", 
+        "img": "https://veridium.io/images/logo_square.png", 
+        "url": "http://www.veridium.io",
+        "ld": { 
+            "@context": "http://schema.org",
+            "@type": "WebSite",  
+            "url": "https://www.veridium.io/"
+        }
+    }) 
+block vars 
+  - var type = 'index'  
+block content
+    section#hero 
+        #hero-svg
+            include ./assets/hero.svg
+        .container
+            hgroup
+                h1 Kick back &amp; relax.
+                p Solace is collorating with Weyerhaeuser to revolutionize the way saunas are built
+                .btn-group
+                    a(href="#")
+                        button.secondary.iconed-rt
+                            div
+                                span Sauna Benefits
+                                .icon-chevron-right
+                    button.tri.grade(data-modal-button="#typeform")
+                        div
+                            span Our process   
+    section#about
+        .container
+            .parent-slider#about-art(data-index="0")
+                small Our Partners
+                #about-list
+                    #about-list-lt(data-clickable="-1")
+                        .icon-chevron-left
+                    #scrollable-wrap
+                        ul.scrollable
+                            li.weyerhaeuser
+                                include ./assets/weyerhaeuser.svg
+                            li.gp
+                                include ./assets/gp.svg
+                            li.wf
+                                include ./assets/wf.svg
+                            li.spi
+                                include ./assets/spi.svg
+                            li.interfor
+                                include ./assets/interfor.svg
+                            li.ifg
+                                include ./assets/ifg.svg
+                            li.potlatch
+                                include ./assets/potlatch.svg
+                    #about-list-rt(data-clickable="1")
+                        .icon-chevron-right
+            #about-desc
+                hgroup
+                    h2 Introducing Solace
+                    p Solace is an environmentally focused company who’s mission is to create a new perspective on everyday sauna use. With the help of our partners, we aim to also build our saunas whilst maintaining the integrity of our healthy forests.
+                    p Our model involves sourcing our lumber from timbers and decking rescued from old barns, factories and warehouses. Even venturing as far as using wood from old coal mines and even wine barrels. Using this recycled wood business model is the ideal way to meet today's ever-growing need for sustainability. 
+    section#desc
+        #desc-bg-wrap
+            include ./assets/desc-bg.svg
+        .container
+            hgroup.parent-slider#someslider(data-index="0")
+                h2 Nature Needs Us
+                p Companies and consumers are beginning to understand the value of the earth's finite resources, including clean air, forests, arable land, clean water and the communities that rely on them.
+                .items
+                    .desc-bullet-top.clickables
+                        li.desc-bullet
+                            .desc-bullet-top
+                                .icon-cross
+                                small The Problem
+                        li.desc-bullet
+                            .desc-bullet-top
+                                .icon-checkmark
+                                small Our Solution
+                    .scrollable#desc-bullets
+                        p.notransform   More and more of our forests are being uprooted. Without the understanding of our options when it comes to recycling and reusing. The value of reclaimed wood has yet to be tapped into. With bringing awareness to the benefits of using dry saunas in general, and using reclaimed wood to build them, we can add to the conversation and possibly the solution to erradicating of our forests.  
+                        p.notransform   By utilizing the power of collaboration and love for the planet, Solace enables a connection and a step in the right direction for awareness of the benefits of sauna use and using reclaimed wood in the process.
+            #desc-art
+                #desc-art-drone-wrap
+                    include ./assets/drone-rotate.svg
+                #desc-art-video-wrap
+                    include ./assets/video-wrap.svg   
+    section.process#resources
+        #resources-svg
+            include ./assets/sauna.svg 
+        .container
+            hgroup#some-parent
+                h2 The Solace process.
+                ol#process-bullets     
+                    li#process-bullet
+                        p First, you email us. Then, we chat about your custom project &amp; location. We define styles that you like, and look at other work you’re a fan of. We’ll define that colors and overall design which take us through week one. 
+                    li#process-bullet
+                        p Week two is much less colaborative, we’ll be sourcing obsolescent wood that we’ll re-treat with our patented refurbishing process. Then. our experts will be building your dream sauna. Once delivered, we’ll go over revisions, if any, and everyone goes home happy.
+    .container#black
+        hr
+    section#icons
+        #benefits-svg-wrap
+            include ./assets/process-bg.svg
+
+        
+
+
+
+
+    
+    script.
+                    'use strict';
+            // dom stuff
+            window.addEventListener('DOMContentLoaded', function () {
+                
+                var isSafari = (navigator.vendor && navigator.vendor.indexOf('Apple') > -1 ||
+                        (navigator.userAgent && navigator.userAgent.match('CriOS'))) &&
+                        !navigator.userAgent.match('FxiOS');
+
+                if (isSafari) {
+                    var s = document.createElement('style')
+                    s.innerHTML = `[filter]{filter: none!important}[style*='filter:'] {filter: none!important};`
+                    document.head.append(s)
+                }
+
+                _doResize()
+
+                var main = document.querySelector('main')
+
+                var _close = function (el) { 
+
+                    el.classList.add('hidden')
+                    document.documentElement.classList.remove('noscroll')
+
+                }
+
+                var _open = function (el) {
+
+                    el.classList.remove('hidden')
+                    document.documentElement.classList.add('noscroll')
+
+                }
+            
+                Array.prototype.slice.call(document.querySelectorAll('[data-modal-button]')).forEach(function (el) {
+
+                    el.addEventListener('click', function (ev) {
+
+
+                        if (!el.dataset.modalButton) throw new Error('closed button that didn\'t have close data-open attr')
+                        var openEl = document.querySelector(el.dataset.modalButton)
+                        if (!openEl) throw new Error('no closable element found. selector in data-open is not valid')
+                        _open(openEl)
+
+                    })
+
+                })
+
+                Array.prototype.slice.call(document.querySelectorAll('.modal-close-btn')).forEach(function (el) {
+
+                    el.addEventListener('click', function (ev) {
+
+                        if (!el.dataset.close) throw new Error('closed button that didn\'t have close data-close attr')
+                        var closeEl = document.querySelector(el.dataset.close)
+                        if (!closeEl) throw new Error('no closable element found. selector in data-close is not valid')
+                        _close(closeEl)
+
+                    })
+
+                })
+
+                Array.prototype.slice.call(document.querySelectorAll('.modal')).forEach(function (el) {
+
+                    el.addEventListener('click', function (ev) {
+
+                        if (ev.target === el)
+                            _close(el)
+
+                    })
+
+                })
+
+                var mobileTrigger = document.querySelector('#mobile-trigger')
+
+                mobileTrigger.addEventListener('click', function (ev) {
+                    
+                    var open = main.dataset.showNav
+                    main.dataset.showNav = open === 'true' ? false : true
+
+                })
+                window.addEventListener('click', function (ev) {
+
+                    var mobileTrigger = document.querySelector('#mobile-trigger')
+                    if (mobileTrigger.contains(ev.target)) return 
+                    
+                    main.dataset.showNav = 'false'
+
+                })
+
+                if (window.location.pathname == '/thank-you')
+                    document.querySelector('#confirmation').classList.remove('hidden')
+
+                Array.prototype.slice.call(document.querySelectorAll('.arrow-left')).forEach(function (el) {
+
+                    el.addEventListener('click', function (_el) {
+
+                        var parent = el.closest('.parent-slider')
+                        var l = Array.prototype.slice.call(parent.querySelector('.scrollable').children).length
+                        var index = parent.dataset.index === '0' ? l - 1 : (parseInt(parent.dataset.index) - 1);
+                        goToSlide('#' + parent.id, index)
+
+                    })
+
+                })
+
+                Array.prototype.slice.call(document.querySelectorAll('.arrow-right, [data-clickable]')).forEach(function (el) {
+
+                    el.addEventListener('click', function (_el) {
+
+                        var parent = el.closest('.parent-slider')
+                        var l = Array.prototype.slice.call(parent.querySelector('.scrollable').children).length
+                        if (el.dataset.clickable)
+                            return goToPos('#' + parent.id, parseInt(parent.dataset.index) + parseInt(el.dataset.clickable))
+                            // var index = parseInt(parent.dataset.index) + parseInt(el.dataset.clickable)
+                        else
+                            var index = parent.dataset.index.toString() === (l - 1).toString() ? 0 : (parseInt(parent.dataset.index) + 1);
+                        goToSlide('#' + parent.id, index)
+
+                    })
+
+                })
+
+                Array.prototype.slice.call(document.querySelectorAll('.clickables')).forEach(function(el) {
+
+                    var parent = el.closest('.parent-slider')
+                    Array.prototype.slice.call(el.children).forEach(function(_el, index) {
+
+                        _el.addEventListener('click', function(ev) {
+
+                            goToSlide('#' + parent.id, index)
+            
+                        })
+                        
+                    })
+
+                })
+
+            })
+
+            function goToPos(parentId, index, slideToNext) {
+
+                var parent = document.querySelector(parentId)
+                Array.prototype.slice.call(parent.querySelectorAll(parentId + ' .scrollable')).forEach(function (el) {
+                    
+                    var child = el.children[index]
+                    if (!child) return; 
+                    
+                    el.scrollLeft = child.offsetLeft
+                    parent.dataset.index = index
+
+                })
+
+            }
+
+
+            function goToSlide(parentId, index, slideToNext) {
+
+                var parent = document.querySelector(parentId)
+                parent.dataset.index = index
+                Array.prototype.slice.call(parent.querySelectorAll(parentId + ' .scrollable')).forEach(function (el) {
+                    
+                    // var slideAmount = slideBy ? : index;
+                    
+                    var width = el.getBoundingClientRect().width
+                    el.scrollLeft = (index * width)
+
+                })
+
+            }
+
+            Array.prototype.slice.call(document.querySelectorAll('#hero, #ecosystem')).forEach(function (el) {
+
+                (function (_el) {
+                    var observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(function(entry) {
+                            console.log(entry)
+                            // if (entry.intersectionRatio > 0)
+                            _el.dataset.visible = entry.intersectionRatio > 0
+                        });
+                    }, {});
+                    observer.observe(_el,  { attributes: true, childList: true });
+                })(el)
+
+            })
+
+
+            var _doResize = function () {
+
+            }
+
+            window.addEventListener('resize', _doResize)

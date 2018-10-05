@@ -1,0 +1,32 @@
+include _header
+include _footer 
+include _mixins 
+block vars
+block head
+body(class=type)
+    main(data-show-nav="false")
+        #nav-wrap
+            nav()
+                a#nav-logo(href="/" style="transform:scale(1.4);transform-origin:center left;")
+                    .icon-leaf(style="color:#F53CEF;font-size:22px;")
+                #mobile-trigger
+                    .icon-menu(style="color:white;")
+                ul#menu-items(data-show-nav="false")
+                    li
+                        a(href="#whitepaper")
+                            button.tri.noborder Whitepaper
+                    li
+                        a(href="#team")
+                            button.tri.noborder Team
+                    li
+                        a(href="#desc")
+                            button.tri.noborder About Us
+                    li
+                        a(href="/")
+                            button.primary.noborder.iconed-rt.grade
+                                div
+                                    span Request A Quote
+                                    .icon-telegram
+        block content
+        
+        +footer

@@ -1,0 +1,15 @@
+mixin footer(opts)
+    footer
+        .container.flex.flex-column#footer-content
+            .hide-lg.flex.justify-content-center#footer-content-top
+                a#nav-logo(href='/')
+                    img(src="../../static/pug.svg" alt="Pug Digital Logo" style="object-fit:contain;")
+            .flex.justify-content-center.justify-space-between-lg.align-items-center#footer-content-bottom
+                .flex.align-items-center.hide-sm
+                    span.icon-paint-format
+                    small Designed by Javon Bangs 
+                a#nav-logo.hide-sm(href='/')
+                    img(src="../../static/pug.svg" alt="Pug Digital Logo" style="object-fit:contain;transform: translateY(-15px);")
+                .flex.align-items-center
+                    span.icon-built
+                    small Built in Seattle &amp; San Diego
