@@ -99,9 +99,99 @@ block content
                         p Week two is much less colaborative, we’ll be sourcing obsolescent wood that we’ll re-treat with our patented refurbishing process. Then. our experts will be building your dream sauna. Once delivered, we’ll go over revisions, if any, and everyone goes home happy.
     .container#black
         hr
-    section#icons
+    section.parent-slider#news(data-index="0")
         #benefits-svg-wrap
             include ./assets/process-bg.svg
+        .container
+            hgroup
+                h2 Sauna Benefits
+            ul.scrollable
+                li.news-article.endurance
+                    .news-article-desc
+                        include ./assets/endurance.svg
+                        h6 Increased Endurance
+                        p.desc Heat shock therapy via sauna use increases nutrient delivery to muscles
+                        a(href="https://www.foundmyfitness.com/reports/sauna-report.pdf")
+                            button.secondary.iconed-rt
+                                div
+                                    span Read more
+                                    .icon-chevrons-right
+                li.news-article.muscle
+                    .news-article-desc
+                        include ./assets/muscle.svg
+                        h6 Easier Muscle Acquisition
+                        p.desc Heat shock releases Human Growth Hormone (HGH), improves insulin sensitivity, and increases longevity 
+                        a(href="https://www.foundmyfitness.com/reports/sauna-report.pdf")
+                            button.secondary.iconed-rt
+                                div
+                                    span Read more
+                                    .icon-chevrons-right
+                li.news-article.brain
+                    .news-article-desc
+                        include ./assets/brain.svg
+                        h6 Positive Brain Effects
+                        p.desc Growth of new brain cells, improvement in focus/learning/memory, additionally sauna use can ameliorate depression and anxiety
+                        a(href="https://www.foundmyfitness.com/reports/sauna-report.pdf")
+                            button.secondary.iconed-rt
+                                div
+                                    span Read more
+                                    .icon-chevrons-right
+            #news-arrows
+                #news-arrow-left(data-clickable="-1")
+                    .icon-chevron-left
+                #news-arrow-right(data-clickable="1")
+                    .icon-chevron-right
+    section#team
+        #team-svg-wrap
+            #team-svg-1
+                include ./assets/team1.svg 
+            #team-svg-2
+                include ./assets/team2.svg 
+            #team-svg-3
+                include ./assets/team3.svg 
+        .container
+            hgroup 
+                h2 Team
+            ul#team-members
+                li.team-member
+                    .team-member-img
+                        img(src="../../static/jb.svg" alt="Javon Bangs")
+                    .team-member-desc
+                        h6 Javon Bangs
+                        p.desc Director of Strategic Partnerships
+                li.team-member
+                    .team-member-img
+                        img(src="../../static/nw.svg" alt="Nikk Wong")
+                    .team-member-desc
+                        h6 Nikk Wong
+                        p.desc Director of Software &amp; Design
+                li.team-member
+                    .team-member-img
+                        img(src="../../static/cm.svg" alt="Claye Merveus")
+                    .team-member-desc
+                        h6 Claye Merveus
+                        p.desc Executive Director
+                li.team-member
+                    .team-member-img
+                        img(src="../../static/pb.svg" alt="Peter Bangs")
+                    .team-member-desc
+                        h6 Peter Bangs
+                        p.desc Director of Compliance
+    section#extended
+        .container
+            #extended-content
+                #extended-content-main
+                    hgroup 
+                        h2 Our Mission
+                        p Solace’s mission and our business model focuses on preventing the acceleration of forrest destruction while providing you with the convience of health you deserve.
+                        small.subtitle —Javon Bangs, Director of Strategic Partnerships
+                #extended-content-aside
+                    .extended-article
+                        .icon-earth
+                        p.desc Assisting in saving our planet, one sauna at a time.
+                    .extended-article
+                        .icon-coin-dollar
+                        p.desc Save a trip to the gym, and save a couple dollars. 
 
         
 

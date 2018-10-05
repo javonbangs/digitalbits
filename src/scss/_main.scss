@@ -364,11 +364,15 @@ svg {
     display: block 
 }
 p {
-    font-size: 15px !important;
-    line-height: 24px !important;
-    font-weight: 100 !important;
-    color: $color-main !important;
-    letter-spacing: 1px !important;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 100;
+    color: $color-main;
+    letter-spacing: 1px;
+}
+p.desc {
+    font-size: 15px;
+    line-height: 26px;
 }
 h6 {
     font-size: 1rem;

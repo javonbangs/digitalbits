@@ -67,3 +67,133 @@
         transform: translateY(50px);
     }
 }
+@include keyframes(drop) {
+    0% {
+        transform: translateY(-5px); 
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-3px);
+        opacity: 0;
+    }
+}
+@include keyframes(rise) {
+    0% {
+        transform: translateY(0px);
+        opacity:.8; 
+    }
+    50% {
+        transform: translateY(-25px);
+        opacity:.4;
+        
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity:0;
+    }
+}
+
+@include keyframes(blobfloat1) {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-180deg) translateY(-250px);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@include keyframes(blobfloat2) {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) translateY(-100px);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@include keyframes(blobfloat3) {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@include keyframes(blobfloater5) {
+    0% {
+        opacity: 1;
+        transform: rotate(-20deg) translate3d(100px, 150px, 0px);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(0deg) translate3d(0px, 0px, 0px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-20deg) translate3d(100px, 150px, 0px);
+    }
+}
+@include keyframes(blobfloater4) {
+    0% {
+        opacity: 1;
+        transform: rotate(0deg) translate3d(0px, 0px, 0px);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(20deg) translate3d(100px, 150px, 0px);
+        
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) translate3d(0px, 0px, 0px);
+    }
+}
+@include keyframes(blobfloat5) {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-180deg) translateY(-50px);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@include keyframes(blobfloat6) {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-180deg) translateY(-25px);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@include keyframes(blobfloat7) {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-180deg) translateY(0px);
+        
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
