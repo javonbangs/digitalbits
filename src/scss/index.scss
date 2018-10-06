@@ -9,6 +9,10 @@
         display: none
     }
 }
+@media (max-width:768px) {
+    main[data-show-nav=true] ul#menu-items {
+        left: 0;} 
+}
 body * {
     transition: all .5s ease-in;
 }
