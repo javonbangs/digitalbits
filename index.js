@@ -5,7 +5,7 @@ var https = require('https');
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
-var server = http.createServer(app);  
+var server = http.createServer(app);   
 
 app.set('view engine', 'pug')
 
@@ -17,8 +17,8 @@ app.use('/static', function(req,res,next) {
 })
 
 app.use('/static', express.static(path.resolve(__dirname, './node_modules')));
-app.use('/favicon.ico', express.static(path.resolve(__dirname, './public/favicon.ico'))); 
-app.use('/static', express.static(path.resolve(__dirname, './public')));
+app.use('/favicon.ico', express.static(path.resolve(__dirname, './public/favicon.ico')));   
+app.use('/static', express.static(path.resolve(__dirname, './public'))); 
 app.use('/static', express.static(path.resolve(__dirname, './dist')));
 app.use('/static', function (req, res, next) {
     res.send(404); 

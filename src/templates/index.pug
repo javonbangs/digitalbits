@@ -2,7 +2,7 @@ extends partials/_layout
 append head
     +header({
         "type": "home",
-        "title": "Solace Custom Saunas", 
+        "title": "Solace", 
         "metadescription": "Sauna your way to a longer life", 
         "img": "https://veridium.io/images/logo_square.png", 
         "url": "http://www.veridium.io",
@@ -17,7 +17,7 @@ block vars
 block content
     section#hero 
         #hero-svg
-            include ./assets/hero.svg
+            include ./assets/hero.svg  
         .container
             hgroup
                 h1 Kick back &amp; relax.
@@ -36,7 +36,7 @@ block content
         .container
             .parent-slider#about-art(data-index="0")
                 small Our Partners
-                #about-list
+                #about-list   
                     #about-list-lt(data-clickable="-1")
                         .icon-chevron-left
                     #scrollable-wrap
@@ -85,8 +85,9 @@ block content
             #desc-art
                 #desc-art-drone-wrap
                     include ./assets/drone-rotate.svg
-                #desc-art-video-wrap
-                    include ./assets/video-wrap.svg   
+                a(href="https://www.youtube.com/watch?v=NChyDtupmkk" target="_blank")    
+                    #desc-art-video-wrap
+                        include ./assets/video-wrap.svg   
     section.process#resources
         #resources-svg
             include ./assets/sauna.svg 
@@ -201,7 +202,7 @@ block content
 
     
     script.
-                    'use strict';
+            'use strict';
             // dom stuff
             window.addEventListener('DOMContentLoaded', function () {
                 

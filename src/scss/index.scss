@@ -16,7 +16,7 @@ body * {
     fill: $color-1!important
 }
 [data-name='steam'] {
-    animation: rise 2s linear infinite;
+    animation: rise 3s linear infinite;
     z-index:99999999;
 }
 [data-name='drop'] {
@@ -30,7 +30,7 @@ body * {
 }
 
 [data-name='person'] {
-    animation: float 4.5s linear infinite;
+    animation: float 4s linear infinite;
     z-index:99999999;
 }
 [data-name='team1'] {
@@ -416,7 +416,7 @@ section#about {
     }
 }
 #desc-art-drone-wrap svg {
-    animation: hover 10s infinite linear;
+    animation: hover 8s infinite linear;
 }
 #someslider[data-index='0'] {
     .desc-bullet-top.clickables {
