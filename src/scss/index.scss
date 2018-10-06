@@ -616,10 +616,15 @@ section#about {
                 counter-increment: list;
                 display:block;
                 clear:both;
-                padding-bottom: 2rem;
+                padding:2rem;
+                margin-top:1rem;
                 font-size: 1.1rem;
                 line-height: 1.375;
                 position: relative;
+                background: white;
+                border-radius: 10px;
+                border: 1px solid rgba(0, 98, 255, 0.1);
+                box-shadow: 0px 10px 50px -5px #0062ff33;
                 p {
                     color:#f53def !important;
                 }
