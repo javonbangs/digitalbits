@@ -23,6 +23,11 @@ body * {
     animation: drop 2.2s linear infinite;
     z-index:99999999;
 }
+[data-name='hand'] {
+    animation: waver 1s alternate infinite;
+    transform-origin: 50% 90%;
+    animation-timing-function: ease-in-out;
+}
 
 [data-name='person'] {
     animation: float 4.5s linear infinite;
@@ -118,10 +123,38 @@ body {
     color: $color-text;
     margin-right: .75rem !important;
 }
-
+#tos {
+    z-index:123;
+    position: relative;
+    background: #1d3c47;
+    padding:2rem 0;
+    p {
+        color:white;
+    }
+    small {
+        color:white;
+    }
+    .container {
+        display:grid;
+        grid-gap: 20px 0;
+        small {
+            span {
+                color:white;
+                opacity:.2;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+@media (min-width:768px) {
+    #tos {
+        .container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
 footer {
-    display:none;
-    background:#152b37;
+    background:#89A2F9;
     padding:4rem 0 20rem;
     position:relative;
     >.container {
@@ -149,12 +182,12 @@ footer {
             width: 940px;
             position: absolute;
             transform-origin: bottom;
-            transform: scale(3) translateY(1px);
+            transform: scale(2) translateX(calc(66vw - 370px)) translateY(47px);
         }
     }
 }
 
-@media (max-width:768px) {
+@media (min-width:768px) {
     footer  {
         margin-top: 0rem;
         padding:8rem 0 35rem;
@@ -162,53 +195,26 @@ footer {
             width:1275px;
             svg {
                 width: 1440px;
-                transform: scale(2.4) translateY(2px);
-                transform-origin: 50% 100%;
+                transform: scale(1.5) translateY(-83px);
+                transform-origin: unset;
             }
-        }
-        * {
-        text-align:center;
         }
     }
     footer>.container {
         #footer-cta {
             text-align: center;
-            max-width: 503px;
+            max-width: 503px; 
             margin: 0 auto;
         }
     }
 }
-
-
-@media (min-width:768px) {
-    #d-content-bullets>* {
-        width:50%;
-    }
-    .row.gutted>*:not(:last-child) {
-        margin-right: 2rem;
+@media (max-width:768px) {
+    footer {
+        * {
+            text-align:center;
+        }
     }
 }
-@media (max-width: 768px) {
-    .bullet-hr {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        content: '';
-        border-bottom: 1px solid $color-text;
-    }
-}
-
-@media (min-width:768px) {
-    .row {
-        margin:1rem 0;
-    }
-}
-[data-name='vee'] {
-    animation: float 5s ease-in-out infinite;
-}
-
-
 
 .grade {
     background: $button-bg !important;
@@ -238,8 +244,8 @@ footer {
             text-align: center;
             align-self: center;
             
-            .btn-group a {
-                order:1;
+            .btn-group {
+                @include justify-content(center);
             }
         
         }

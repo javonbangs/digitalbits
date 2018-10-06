@@ -182,19 +182,18 @@ body {
     }
 }
 .btn-group { // mobile
-    margin: 2rem -5px;
+    margin-top: 2rem;
     @include flex();
-    @include flex-wrap(wrap);
     @include flex-direction(column);
+    >:not(:first-child) {
+        margin: 1rem 0 0 0;
+    }
     >* {
-        margin:5px;
+        
         -webkit-box-flex: 1;
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
-    }
-    a {
-        width:100%;
     }
     button {
         width:100%;
@@ -207,6 +206,7 @@ body {
         }
     }
 }
+
 button {
     transition: all .1s linear; 
     font-family: $font-body;
@@ -263,7 +263,7 @@ button {
     }
     &.secondary {
         color:$color-main;
-        border: 1px solid $color-main;
+        border: none;
         background: rgba(255,255,255,1);
         * {
             color:$color-main; 
@@ -276,7 +276,7 @@ button {
     }
     &.iconed-rt:not(.tri):not(.empty) {
         span {
-            padding: 0rem 2rem 0rem 2rem
+            padding: 0rem 0rem 0rem 2rem
         }
     }
     &.iconed-lt:not(.tri):not(.empty) {
@@ -295,7 +295,7 @@ button {
             [class^="icon-"], [class*=" icon-"] { 
                 color: $color-main;
                 font-size: 12px; 
-                margin: 0 .75rem 0 0;
+                margin: 0 .75rem;
                 -webkit-box-flex: 0 1 auto;
                 -webkit-flex: 0 1 auto;
                 -ms-flex: 0 1 auto;
@@ -543,7 +543,6 @@ h5 {
         @include flex-direction(row);
         >:not(:first-child) {
             margin: 0 0 0 1rem;
-            order:-1;
         }
     }
     .constrain-lg {
