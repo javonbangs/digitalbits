@@ -331,6 +331,7 @@ section#about {
                 [id*='about-list-'] {
                     visibility: visible;
                     margin-top: -45px;
+                    z-index: 99999;
                 }
                 #scrollable-wrap {
                     ul {
