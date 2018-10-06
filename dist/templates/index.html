@@ -90,7 +90,7 @@
 
         Array.prototype.slice.call(document.querySelectorAll('.arrow-left')).forEach(function (el) {
 
-            el.addEventListener('click', function (_el) {
+            el.addEventListener('click touchstart', function (_el) {
 
                 var parent = el.closest('.parent-slider')
                 var l = Array.prototype.slice.call(parent.querySelector('.scrollable').children).length
@@ -103,7 +103,7 @@
 
         Array.prototype.slice.call(document.querySelectorAll('.arrow-right, [data-clickable]')).forEach(function (el) {
 
-            el.addEventListener('click', function (_el) {
+            el.addEventListener('click touchstart', function (_el) {
 
                 var parent = el.closest('.parent-slider')
                 var l = Array.prototype.slice.call(parent.querySelector('.scrollable').children).length
