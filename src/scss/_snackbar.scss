@@ -27,6 +27,9 @@
 
 main {
     &[data-show-nav=true] {
+        #nav-wrap {
+            z-index: 10000
+        }
         #snackbar {
             // left: 300px
         }

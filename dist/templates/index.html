@@ -73,6 +73,7 @@
         mobileTrigger.addEventListener('click', function (ev) {
             
             var open = main.dataset.showNav
+            console.log(open)
             main.dataset.showNav = open === 'true' ? false : true
 
         })
@@ -989,23 +990,6 @@
                     _close(el)
 
             })
-
-        })
-
-        var mobileTrigger = document.querySelector('#mobile-trigger')
-
-        mobileTrigger.addEventListener('click', function (ev) {
-            
-            var open = main.dataset.showNav
-            main.dataset.showNav = open === 'true' ? false : true
-
-        })
-        window.addEventListener('click', function (ev) {
-
-            var mobileTrigger = document.querySelector('#mobile-trigger')
-            if (mobileTrigger.contains(ev.target)) return 
-            
-            main.dataset.showNav = 'false'
 
         })
 
