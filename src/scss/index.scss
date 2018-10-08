@@ -452,6 +452,16 @@ section#about {
         }
     }
 }
+#someslider[data-index='1'] {
+    .desc-bullet-top.clickables {
+        >:last-child {
+            background: white;
+            small {
+                color:#001d4c !important;
+            }
+        }
+    }
+}
 #desc {
     z-index:3;
     margin:-3rem 0;
