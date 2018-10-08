@@ -150,8 +150,8 @@ body {
 #tos {
     z-index:123;
     position: relative;
-    background: #1d3c47;
-    padding:2rem 0;
+    background: #1a1760;
+    padding:4rem 0;
     p {
         color:white;
     }
@@ -219,7 +219,7 @@ footer {
             width:1275px;
             svg {
                 width: 1440px;
-                transform: scale(1.5) translateY(-83px);
+                transform: scale(1.5) translateY(-50px);
                 transform-origin: unset;
             }
         }
